@@ -1,0 +1,18 @@
+.appWrapper {
+    min-height: 100%;
+    display: grid;
+    background-color: cornsilk;
+    position: relative;
+    grid-template: minmax(200px, auto) 1fr minmax(100px, auto)/ 300px 1fr ;
+
+    grid-template-areas: 
+    'header header'
+    'nav content' 
+    'footer footer';
+
+}
+
+
+
+
+
