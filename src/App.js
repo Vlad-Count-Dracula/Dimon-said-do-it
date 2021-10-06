@@ -4,17 +4,18 @@ import Logo from './body/Header/img/Logo.png';
 import mainPhoto from './body/Content/img/Photo.jpg'
 import Header from './body/Header/Header';
 import Content from './body/Content/Content';
-import SideBar from './body/SideBar/SideBar';
 import Footer from './body/Footer/Footer';
+import { BrowserRouter } from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
   return (
+    <BrowserRouter>
     <div className='appWrapper'>
       <Header />
-      <SideBar />
-      <Content />
+      <Content state={props.state} />
       <Footer />
     </div>
+    </BrowserRouter>
   );
 };
 
