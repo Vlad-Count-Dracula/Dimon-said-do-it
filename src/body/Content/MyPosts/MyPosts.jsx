@@ -2,7 +2,13 @@ import React from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 
-const MyPosts = () => {
+
+
+
+const MyPosts = (props) => {
+
+  let mapPostDataMessage = props.state.postDataMessage.map( post => <Post message={post.message} likeCount={post.likeCount} /> );
+
     return (
         <div className={s.myPosts}>
             <div>
@@ -12,8 +18,7 @@ const MyPosts = () => {
               <button>Add post</button>
               <button>Remove</button>
             </div>
-            <Post />
-            <Post />
+            {mapPostDataMessage}
           </div>
         </div>
     )
