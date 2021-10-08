@@ -1,0 +1,11 @@
+.friend__logo {
+    background-color: coral;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+};
+
+.friend {
+    text-align: center;
+    
+}
