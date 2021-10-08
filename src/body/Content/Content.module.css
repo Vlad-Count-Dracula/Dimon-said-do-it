@@ -1,9 +1,0 @@
-.content {
-    grid-area: content;
-    display: grid;
-    background-color:  rgba(218, 171, 223, 0.733);
-    margin: 20px 20px 20px 0;
-    border-radius: 10px;
-}
-
-
