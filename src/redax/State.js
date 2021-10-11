@@ -1,3 +1,6 @@
+import reduseMessagePage from "./reduseMessagePage";
+import reduseProfilePage from "./reduseProfilePage";
+
 
 
 const ADD_POST = 'ADD-POST';
@@ -23,7 +26,7 @@ let store = {
         ],
 
         dataMessageText : [
-            {text: 'For now your situation really complucated :)'},
+            {text: 'For now your situation really complicated :)'},
             {text: 'And only you have power to change everything !'},
             {text: 'Use your power more then 100% !'},
           ],
@@ -61,34 +64,18 @@ let store = {
   },
 
   dispatch(action) {
-    if ( action.type === ADD_POST ) {
-      let newElement = {
-        message : this._state.profilePage.newPostText,
-        likeCount : 0,
-      };
-      this._state.profilePage.postDataMessage.push(newElement);
-      this._reRenderSide(this._state);
-    } else if ( action.type === CARRENT_VALUE) {
-      this._state.profilePage.newPostText = action.carrentMessage;
-      this._reRenderSide(this._state);
-    } else if ( action.type === ADD_MESSAGE) {
-      let newMessage = {
-        text : this._state.messagePage.newDataMessageText,
-      };
-      this._state.messagePage.dataMessageText.push(newMessage);
-      this._reRenderSide(this._state)
-    } else if ( action.type === CARRENT_MESSAGE ) {
-        this._state.messagePage.newDataMessageText = action.carrentText;
-        this._reRenderSide(this._state);
-    }
-  },
 
+    this._state.profilePage = reduseProfilePage(this._state.profilePage, action);
+    this._state.messagePage = reduseMessagePage(this._state.messagePage, action);
+    
+
+    this._reRenderSide(this._state);
+
+  },
   
   reRender(observe) {
    this._reRenderSide = observe;
  },
-
-
 
 };
 
@@ -208,4 +195,29 @@ export default store ;
   //   this._state.profilePage.newPostText = carrentMessage;
   //   this._reRenderSide(this._state);
   // },
+
+
+
+// =========== Old dispatch ================
+
+      // if ( action.type === ADD_POST ) {
+    //   let newElement = {
+    //     message : this._state.profilePage.newPostText,
+    //     likeCount : 0,
+    //   };
+    //   this._state.profilePage.postDataMessage.push(newElement);
+    //   this._reRenderSide(this._state);
+    // } else if ( action.type === CARRENT_VALUE) {
+    //   this._state.profilePage.newPostText = action.carrentMessage;
+    //   this._reRenderSide(this._state);
+    // } else if ( action.type === ADD_MESSAGE) {
+    //   let newMessage = {
+    //     text : this._state.messagePage.newDataMessageText,
+    //   };
+    //   this._state.messagePage.dataMessageText.push(newMessage);
+    //   this._reRenderSide(this._state)
+    // } else if ( action.type === CARRENT_MESSAGE ) {
+    //     this._state.messagePage.newDataMessageText = action.carrentText;
+    //     this._reRenderSide(this._state);
+    // }
  
