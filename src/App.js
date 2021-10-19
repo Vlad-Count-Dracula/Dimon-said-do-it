@@ -4,11 +4,11 @@ import Header from './body/Header/Header';
 import Content from './body/Content/Content';
 import Footer from './body/Footer/Footer';
 
-const App = (props) => {
+const App = () => {
   return (
     <div className='appWrapper'>
       <Header />
-      <Content state={props.state} dispatch={props.dispatch}/>
+      <Content />
       <Footer />
     </div>
   );

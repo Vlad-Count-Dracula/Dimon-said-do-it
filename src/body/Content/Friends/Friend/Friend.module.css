@@ -1,0 +1,42 @@
+.post {
+    display: grid;
+    grid-template: 1fr 40px/ 200px 1fr;
+    margin: 30px;
+}
+
+.post__ava {
+    position: relative;
+	padding: 0 0 90% 0;  
+}
+
+.post__ava img {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	height: 100%;
+	object-fit: cover;
+    border-radius: 55%;
+}
+
+.post__text {
+    margin: 20px 0 0 0;
+}
+
+
+
+.post__like {
+    background-color: #f5f5f5a8;
+    text-align: center;
+    width: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    left: 195px;
+    top: -40px;
+}
+
+
+
+
+

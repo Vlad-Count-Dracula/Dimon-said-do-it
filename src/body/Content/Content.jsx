@@ -1,29 +1,32 @@
 import React from "react";
-import mainPhoto from './img/Photo.jpg';
-import s from './Content.module.css' ;
+import s from './Content.module.css';
 import Profile from "./Profile/Profile";
-import MyPosts from "./MyPosts/MyPosts";
-import { BrowserRouter , Route } from "react-router-dom";
-import Messages from "./Messages/Messages";
+import { BrowserRouter, Route } from "react-router-dom";
 import News from "./News/News";
 import Settings from "./Settings/Settings";
 import Music from "./Music/Music";
-import SideBar from './SideBar/SideBar.jsx';
+import MessagesContainer from "./Messages/MessagesContainer";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import SideBarContainer from "./SideBar/SideBarContainer";
+import FriendsContainer from "./Friends/FriendsContainer";
 
-const Content = (props) => {
-    return (
+
+
+const Content = () => {
+  return (
     <BrowserRouter>
-      <SideBar state={props.state.sideBar} />
+      <SideBarContainer />
       <div className={s.content}>
-        <Route path='/profile' render={ () => <Profile /> }/>
-        <Route path='/profile' render={ () => <MyPosts state={props.state.profilePage} dispatch={props.dispatch}  /> }/>
-        <Route path='/messages' render={ () => <Messages state={props.state.messagePage} dispatch={props.dispatch} /> }/>
-        <Route path='/news' render={ () =>  <Music /> }/>
-        <Route path='/music' render={ () => <News /> }/>
-        <Route path='/settings' render={ () =>  <Settings /> }/>
-        </div>
-     </BrowserRouter>
-    )
+        <Route path='/profile' render={() => <Profile />} />
+        <Route path='/profile' render={() => <MyPostsContainer />} />
+        <Route path='/friends' render={() => <FriendsContainer />} />
+        <Route path='/messages' render={() => <MessagesContainer />} />
+        <Route path='/news' render={() => <Music />} />
+        <Route path='/music' render={() => <News />} />
+        <Route path='/settings' render={() => <Settings />} />
+      </div>
+    </BrowserRouter>
+  )
 };
 
-export default Content ;
+export default Content;
