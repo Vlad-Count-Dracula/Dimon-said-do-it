@@ -1,5 +1,6 @@
 import reduseMessagePage from "./reduseMessagePage";
 import reduseProfilePage from "./reduseProfilePage";
+import reduseSideBarPage from "./reduseSideBarPage";
 
 
 
@@ -67,7 +68,7 @@ let store = {
 
     this._state.profilePage = reduseProfilePage(this._state.profilePage, action);
     this._state.messagePage = reduseMessagePage(this._state.messagePage, action);
-    
+    this._state.messagePage = reduseSideBarPage(this._state.messagePage, action);
 
     this._reRenderSide(this._state);
 
